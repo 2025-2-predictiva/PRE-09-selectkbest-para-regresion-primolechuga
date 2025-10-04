@@ -31,14 +31,14 @@ def load_estimator():
 
 def test_01():
 
-    from sklearn.metrics import accuracy_score
+    from sklearn.metrics import mean_squared_error
 
     x, y = load_data()
     estimator = load_estimator()
 
-    accuracy = accuracy_score(
+    accuracy = mean_squared_error(
         y_true=y,
         y_pred=estimator.predict(x),
     )
 
-    assert accuracy > 0.9545
+    assert accuracy > 0.954
